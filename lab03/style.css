@@ -1,23 +1,23 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+  font-family: Arial, sans-serif;
+  background: #0b0c0c;
+  color: #a1f0d2;
 }
 
 h1 {
-    color: darkblue;
+  color: #0b0bbe;
 }
 
 h2, h3 {
-    color: darkred;
+  color: #18048b;
 }
 
 p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 footer {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
