@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PNG Example</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; text-align: center; }
+    .overlay { height: 0; width: 100%; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.9); overflow: hidden; transition: 0.3s; }
+    .overlay a { display: block; font-size: 30px; color: #fff; text-decoration: none; margin: 20px 0; }
+    .overlay a:hover { color: #ccc; }
+    .closebtn { position: absolute; top: 20px; right: 30px; font-size: 40px; color: #fff; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<button onclick="document.getElementById('myNav').style.height='100%'">☰ Menu</button>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="document.getElementById('myNav').style.height='0'">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="jpg.html">JPG</a>
+  <a href="png.html">PNG</a>
+  <a href="gif.html">GIF</a>
+</div>
+
+<h1>PNG Example</h1>
+<img src="images/example2.png" alt="Transparent logo" width="300">
+<p><strong>Description:</strong> This image is a logo with a transparent background.</p>
+<p><strong>Why I chose it:</strong> PNG supports transparency, making it ideal for logos or images that need clear edges on different backgrounds.</p>
+<p><a href="index.html">← Back to Home</a></p>
+
+</body>
+</html>
+
+

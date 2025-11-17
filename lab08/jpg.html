@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JPG Example</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; text-align: center; }
+    .overlay { height: 0; width: 100%; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.9); overflow: hidden; transition: 0.3s; }
+    .overlay a { display: block; font-size: 30px; color: #fff; text-decoration: none; margin: 20px 0; }
+    .overlay a:hover { color: #ccc; }
+    .closebtn { position: absolute; top: 20px; right: 30px; font-size: 40px; color: #fff; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<button onclick="document.getElementById('myNav').style.height='100%'">☰ Menu</button>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="document.getElementById('myNav').style.height='0'">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="jpg.html">JPG</a>
+  <a href="png.html">PNG</a>
+  <a href="gif.html">GIF</a>
+</div>
+
+<h1>JPG Example</h1>
+<img src="images/example1.jpg" alt="Mountain landscape" width="400">
+<p><strong>Description:</strong> This is a photo of a scenic mountain landscape of some people in a boat.</p>
+<p><strong>Why I chose it:</strong> JPGs are perfect for colorful, detailed images like photographs. They balance quality with small file size.</p>
+<p><a href="index.html">← Back to Home</a></p>
+
+</body>
+</html>
+
