@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bonus: Toggle Employee XML Data</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #7ce2af;
+        }
+
+        th {
+            background-color: #7c0f65;
+            color: white;
+        }
+
+        .button {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            border: 4px solid rgb(55, 12, 211);
+            background: rgba(20, 192, 4, 0.5);
+            color: rgb(230, 36, 78);
+            outline: none;
+            border-radius: 30px;
+            font-size: 30px;
+            width: 500px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            color: black;
+            background: white;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+
+    <script>
+        let tableVisible = false; // Tracks table visibility
+
+        function toggleTable() {
+            const button = document.getElementById("toggleBtn");
+            const table = document.getElementById("id");
+
+            // If table is currently hidden → load & show it
+            if (!tableVisible) {
+                loadXMLDoc();
+                table.style.display = "table";
+                button.textContent = "Close Employee Data";
+                tableVisible = true;
+            }
+            // If table is visible → hide it
+            else {
+                table.innerHTML = ""; // Clears table content
+                table.style.display = "none";
+                button.textContent = "Get Employee Data";
+                tableVisible = false;
+            }
+        }
+
+        function loadXMLDoc() {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    empDetails(this);
+                }
+            };
+
+            xmlhttp.open("GET", "employee.xml", true);
+            xmlhttp.send();
+        }
+
+        function empDetails(xml) {
+            let xmlDoc = xml.responseXML;
+            let table =
+                `<tr><th>Firstname</th><th>Lastname</th>
+                    <th>Title</th><th>Division</th>
+                    <th>Building</th><th>Room</th>
+                </tr>`;
+
+            let employees = xmlDoc.getElementsByTagName("employee");
+
+            for (let i = 0; i < employees.length; i++) {
+                table += "<tr><td>" +
+                    employees[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    employees[i].getElementsByTagName("lastname")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    employees[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    employees[i].getElementsByTagName("division")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    employees[i].getElementsByTagName("building")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    employees[i].getElementsByTagName("room")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+            }
+
+            document.getElementById("id").innerHTML = table;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="center">
+        <button id="toggleBtn" class="button" onclick="toggleTable()">
+            Get Employee Data
+        </button>
+    </div>
+
+    <br><br>
+
+    <!-- Table initially hidden -->
+    <table id="id" style="display: none;"></table>
+
+</body>
+
+</html>
