@@ -16,3 +16,4 @@ All links below go to the **live GitHub Pages site**.
 - [Lab 6](https://trevorbreeden007-netizen.github.io/CSIT121/lab06/index.html)
 - [Lab 7](https://trevorbreeden007-netizen.github.io/CSIT121/lab07/index.html)
 - [Lab 8](https://trevorbreeden007-netizen.github.io/CSIT121/lab08/index.html)
+- [Lab 9](https://trevorbreeden007-netizen.github.io/CSIT121/lab09/index.html)
