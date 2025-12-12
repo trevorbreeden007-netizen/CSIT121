@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Format Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      text-align: center;
+      color: #333;
+    }
+    a.content-link {
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: bold;
+    }
+    a.content-link:hover {
+      color: #004999;
+    }
+    .overlay {
+      height: 0;
+      width: 100%;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      background-color: rgba(0,0,0,0.95);
+      overflow-y: hidden;
+      transition: 0.5s;
+    }
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .overlay a {
+      padding: 15px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    .overlay a:hover {
+      color: #f1f1f1;
+    }
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+      color: #f1f1f1;
+      text-decoration: none;
+    }
+    @media screen and (max-height: 450px) {
+      .overlay a { font-size: 20px; }
+      .overlay .closebtn { font-size: 40px; top: 15px; right: 35px; }
+    }
+    main { padding: 40px; }
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #0066cc;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      margin: 20px;
+      border-radius: 5px;
+    }
+    .openbtn:hover { background-color: #004999; }
+  </style>
+</head>
+<body>
+  <button class="openbtn" onclick="openNav()">☰ Menu</button>
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="index.html">Home</a>
+      <a href="jpg.html">JPG</a>
+      <a href="png.html">PNG</a>
+      <a href="gif.html">GIF</a>
+    </div>
+  </div>
+  <main>
+    <h1>Welcome to My Image Format Showcase</h1>
+    <p>Explore the different image formats used on the web:</p>
+    <ul style="list-style: none; padding: 0;">
+      <li><a class="content-link" href="jpg.html">JPG Example</a></li>
+      <li><a class="content-link" href="png.html">PNG Example</a></li>
+      <li><a class="content-link" href="gif.html">GIF Example</a></li>
+    </ul>
+  </main>
+  <script>
+    function openNav() { document.getElementById("myNav").style.height = "100%"; }
+    function closeNav() { document.getElementById("myNav").style.height = "0%"; }
+  </script>
+</body>
+</html>
+
